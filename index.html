@@ -198,6 +198,12 @@
         .reveal-right.visible{opacity:1;transform:translateX(0)}
         .reveal-scale{opacity:0;transform:scale(.85);transition:opacity .7s ease,transform .7s ease}
         .reveal-scale.visible{opacity:1;transform:scale(1)}
+        /* Mobile: everything visible immediately */
+        @media(max-width:768px){
+            .reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1!important;transform:none!important;transition:none!important}
+            .service-card{transform:none!important}
+            .service-card:hover{transform:translateY(-8px)!important}
+        }
         
         /* Animated Counter */
         .stat-num{font-size:2.5rem;font-weight:800;color:var(--teal);display:block}
@@ -637,6 +643,8 @@
     <script>
     (function(){
         // === 3D CARD TILT ===
+        // 3D tilt - desktop only
+        if(window.innerWidth > 768){
         document.querySelectorAll('.service-card').forEach(card => {
             card.addEventListener('mousemove', e => {
                 const rect = card.getBoundingClientRect();
@@ -654,6 +662,7 @@
                 card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale3d(1,1,1)';
             });
         });
+        } // end desktop check
 
         // === ADD REVEAL CLASSES (BEFORE observer) ===
         document.querySelectorAll('.service-card').forEach(c => c.classList.add('reveal'));
@@ -673,11 +682,15 @@
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        revealElements.forEach(el => revealObserver.observe(el));
+        if(window.innerWidth > 768){
+            revealElements.forEach(el => revealObserver.observe(el));
+        } else {
+            revealElements.forEach(el => el.classList.add('visible'));
+        }
 
         // === HERO PARALLAX ===
         const hero = document.querySelector('.hero');
-        if(hero){
+        if(hero && window.innerWidth > 768){
             document.addEventListener('mousemove', e => {
                 const x = (e.clientX / window.innerWidth - 0.5) * 20;
                 const y = (e.clientY / window.innerHeight - 0.5) * 20;
