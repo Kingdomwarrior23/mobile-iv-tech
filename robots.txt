@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kingdomwarrior23.github.io/mobile-iv-tech/sitemap.xml
