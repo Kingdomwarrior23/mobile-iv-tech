@@ -181,9 +181,60 @@
         .floating-cta .btn-book{background:var(--gold);color:var(--navy)}
         .floating-cta .btn-call{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.3)}
         @media(max-width:768px){.floating-cta{display:block}body{padding-bottom:70px}}
+    
+        /* Particles canvas */
+        #particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+        
+        /* 3D Card Tilt */
+        .service-card{transform-style:preserve-3d;perspective:1000px;transition:transform .15s ease,box-shadow .3s}
+        .service-card:hover{box-shadow:0 20px 40px rgba(0,0,0,.15)}
+        .service-card .card-inner{transform:translateZ(20px)}
+        
+        /* Scroll Reveal */
+        .reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+        .reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .7s ease,transform .7s ease}
+        .reveal-left.visible{opacity:1;transform:translateX(0)}
+        .reveal-right{opacity:0;transform:translateX(50px);transition:opacity .7s ease,transform .7s ease}
+        .reveal-right.visible{opacity:1;transform:translateX(0)}
+        .reveal-scale{opacity:0;transform:scale(.85);transition:opacity .7s ease,transform .7s ease}
+        .reveal-scale.visible{opacity:1;transform:scale(1)}
+        
+        /* Animated Counter */
+        .stat-num{font-size:2.5rem;font-weight:800;color:var(--teal);display:block}
+        .stat-num .counter{display:inline-block}
+        
+        /* Button Ripple */
+        .btn-ripple{position:relative;overflow:hidden}
+        .btn-ripple .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.4);transform:scale(0);animation:ripple-anim .6s linear;pointer-events:none}
+        @keyframes ripple-anim{to{transform:scale(4);opacity:0}}
+        
+        /* Hero Parallax Layers */
+        .hero-content{position:relative;z-index:2}
+        .hero-parallax-bg{position:absolute;top:0;left:0;right:0;bottom:0;z-index:1;overflow:hidden}
+        
+        /* Glow effect on hover */
+        .service-card::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;border-radius:12px;opacity:0;transition:opacity .3s;background:radial-gradient(circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(0,180,216,.15),transparent 60%);pointer-events:none}
+        .service-card:hover::after{opacity:1}
+        .service-card{position:relative}
+        
+        /* Floating shapes */
+        .float-shape{position:absolute;border-radius:50%;opacity:.06;animation:float-drift 8s ease-in-out infinite}
+        @keyframes float-drift{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-20px) rotate(180deg)}}
+        
+        /* Stagger delays for cards */
+        .service-card:nth-child(1){transition-delay:.05s}
+        .service-card:nth-child(2){transition-delay:.1s}
+        .service-card:nth-child(3){transition-delay:.15s}
+        .service-card:nth-child(4){transition-delay:.2s}
+        .service-card:nth-child(5){transition-delay:.25s}
+        .service-card:nth-child(6){transition-delay:.3s}
+        .service-card:nth-child(7){transition-delay:.35s}
+
     </style>
 </head>
 <body>
+    <canvas id="particles"></canvas>
     <!-- Navigation -->
     <nav>
         <div class="container">
@@ -237,7 +288,7 @@
                 <p>Each treatment is administered by a licensed nurse and customized to your specific needs</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card"><div class="card-inner">
                     <div class="service-icon">💧</div>
                     <h3>Hydration Therapy</h3>
                     <p>Rapid fluid replacement to restore hydration, boost energy, and support recovery. Perfect after workouts, travel, illness, or long days in the Texas heat.</p>
@@ -246,7 +297,7 @@
                         <span class="duration">30–45 min session</span>
                     </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card"><div class="card-inner">
                     <div class="service-icon">🛡️</div>
                     <h3>Immunity Boost</h3>
                     <p>High-dose Vitamin C, Zinc, and antioxidants to strengthen your immune system. Ideal during cold and flu season or when you feel something coming on.</p>
@@ -255,7 +306,7 @@
                         <span class="duration">30–45 min session</span>
                     </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card"><div class="card-inner">
                     <div class="service-icon">⚡</div>
                     <h3>Energy & Performance</h3>
                     <p>B-complex vitamins, amino acids, and electrolytes to fight fatigue and sharpen mental clarity. Great for athletes, busy professionals, and anyone running low.</p>
@@ -264,7 +315,7 @@
                         <span class="duration">30–45 min session</span>
                     </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card"><div class="card-inner">
                     <div class="service-icon">🤕</div>
                     <h3>Hangover Recovery</h3>
                     <p>Fast relief from nausea, headache, and dehydration with targeted vitamins, fluids, and anti-nausea medication. Back on your feet in under an hour.</p>
@@ -273,7 +324,7 @@
                         <span class="duration">30–45 min session</span>
                     </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card"><div class="card-inner">
                     <div class="service-icon">✨</div>
                     <h3>Myers' Cocktail</h3>
                     <p>The gold standard of IV therapy — Magnesium, Calcium, B12, B-Complex, and Vitamin C for overall wellness, vitality, and immune support.</p>
@@ -282,7 +333,7 @@
                         <span class="duration">60–75 min session</span>
                     </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card"><div class="card-inner">
                     <div class="service-icon">🧬</div>
                     <h3>NAD+ Therapy</h3>
                     <p>Advanced cellular repair and anti-aging therapy that supports brain function, sustained energy, and longevity. The cutting edge of wellness medicine.</p>
@@ -291,7 +342,7 @@
                         <span class="duration">60–75 min session</span>
                     </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card"><div class="card-inner">
                     <div class="service-icon">💪</div>
                     <h3>Glutathione Push</h3>
                     <p>The master antioxidant — supports detoxification, brightens skin, and fights oxidative stress at the cellular level. Glow from the inside out.</p>
@@ -582,5 +633,185 @@
         ]
     }
     </script>
+
+    <!-- 3D & Interactive Effects -->
+    <script>
+    (function(){
+        // === PARTICLES ===
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouseX = 0, mouseY = 0;
+
+        function resizeCanvas(){
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor(){
+                this.reset();
+            }
+            reset(){
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.1;
+            }
+            update(){
+                this.x += this.speedX;
+                this.y += this.speedY;
+                // Mouse repulsion
+                const dx = this.x - mouseX;
+                const dy = this.y - mouseY;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                if(dist < 100){
+                    this.x += dx/dist * 1.5;
+                    this.y += dy/dist * 1.5;
+                }
+                if(this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if(this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+            draw(){
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(0, 180, 216, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        for(let i = 0; i < 60; i++){
+            particles.push(new Particle());
+        }
+
+        function drawLines(){
+            for(let i = 0; i < particles.length; i++){
+                for(let j = i+1; j < particles.length; j++){
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if(dist < 120){
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(0, 180, 216, ${0.08 * (1 - dist/120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateParticles(){
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            drawLines();
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // === 3D CARD TILT ===
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 12;
+                const rotateY = (centerX - x) / 12;
+                card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03,1.03,1.03)`;
+                card.style.setProperty('--mouse-x', (x/rect.width*100)+'%');
+                card.style.setProperty('--mouse-y', (y/rect.height*100)+'%');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale3d(1,1,1)';
+            });
+        });
+
+        // === SCROLL REVEAL ===
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        revealElements.forEach(el => observer.observe(el));
+
+        // === HERO PARALLAX ===
+        const hero = document.querySelector('.hero');
+        if(hero){
+            document.addEventListener('mousemove', e => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 20;
+                const y = (e.clientY / window.innerHeight - 0.5) * 20;
+                hero.style.backgroundPosition = `calc(50% + ${x}px) calc(50% + ${y}px)`;
+            });
+        }
+
+        // === ANIMATED COUNTERS ===
+        document.querySelectorAll('.counter').forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const suffix = counter.getAttribute('data-suffix') || '';
+            const observer = new IntersectionObserver((entries) => {
+                if(entries[0].isIntersecting){
+                    let current = 0;
+                    const increment = target / 60;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if(current >= target){
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        counter.textContent = Math.floor(current) + suffix;
+                    }, 25);
+                    observer.unobserve(counter);
+                }
+            }, { threshold: 0.5 });
+            observer.observe(counter);
+        });
+
+        // === BUTTON RIPPLE ===
+        document.querySelectorAll('.btn-ripple').forEach(btn => {
+            btn.addEventListener('click', function(e){
+                const rect = this.getBoundingClientRect();
+                const ripple = document.createElement('span');
+                ripple.className = 'ripple';
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+                ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // === ADD REVEAL CLASSES ===
+        // Auto-add reveal to key sections
+        document.querySelectorAll('.service-card').forEach(c => c.classList.add('reveal'));
+        document.querySelectorAll('.review-card').forEach(c => c.classList.add('reveal'));
+        document.querySelectorAll('.faq-item').forEach(c => c.classList.add('reveal'));
+        
+        // Stats section
+        const stats = document.querySelector('.about-stats');
+        if(stats) stats.classList.add('reveal-scale');
+        
+        // Trust bar
+        const trust = document.querySelector('.trust-bar');
+        if(trust) trust.classList.add('reveal');
+
+    })();
+    </script>
+
 </body>
 </html>
