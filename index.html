@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile IV Therapy in Lubbock, TX | Mobile IV Tech</title>
+    <meta name="description" content="Professional mobile IV therapy in Lubbock, TX. Hydration, immunity, energy & more — we come to you. Book online today.">
+    <meta property="og:title" content="Mobile IV Therapy in Lubbock, TX | Mobile IV Tech">
+    <meta property="og:description" content="Professional mobile IV therapy that comes to you in Lubbock, TX. Licensed nurse. Same-day appointments.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://mobileivtech.com/">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--navy:#0d1b2a;--dark:#1b2a4a;--teal:#00b4d8;--teal-light:#48cae4;--accent:#f77f00;--white:#fff;--gray:#f0f4f8;--text:#2d3748;--muted:#718096}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);line-height:1.6;overflow-x:hidden}
+        .container{max-width:1100px;margin:0 auto;padding:0 20px}
+        nav{background:var(--navy);padding:14px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+        nav .container{display:flex;justify-content:space-between;align-items:center}
+        .logo{color:var(--white);font-size:1.5rem;font-weight:800;text-decoration:none}
+        .logo span{color:var(--teal)}
+        .nav-links{display:flex;gap:24px;align-items:center}
+        .nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.95rem;transition:color .2s}
+        .nav-links a:hover{color:var(--teal)}
+        .nav-cta{background:var(--teal);color:var(--white)!important;padding:8px 18px;border-radius:6px;font-weight:600}
+        .nav-cta:hover{background:var(--teal-light)}
+        .hamburger{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+        @media(max-width:768px){
+            .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:16px}
+            .nav-links.open{display:flex}
+            .hamburger{display:block}
+        }
+        .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--dark) 100%);color:var(--white);padding:100px 0 80px;text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 70%,rgba(0,180,216,.15) 0%,transparent 50%)}
+        .hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:20px;line-height:1.2}
+        .hero h1 span{color:var(--teal)}
+        .hero p{font-size:1.15rem;color:rgba(255,255,255,.8);max-width:600px;margin:0 auto 35px}
+        .hero-badges{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+        .badge{background:rgba(0,180,216,.15);border:1px solid rgba(0,180,216,.3);padding:8px 16px;border-radius:20px;font-size:.85rem;color:var(--teal-light)}
+        .btn-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+        .btn-primary{background:var(--teal);color:var(--white);padding:14px 32px;border:none;border-radius:8px;font-size:1.05rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;display:inline-block}
+        .btn-primary:hover{background:var(--teal-light);transform:translateY(-2px)}
+        .btn-secondary{background:transparent;color:var(--white);padding:14px 32px;border:2px solid rgba(255,255,255,.3);border-radius:8px;font-size:1.05rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s}
+        .btn-secondary:hover{border-color:var(--teal);color:var(--teal)}
+        .section{padding:80px 0}
+        .section-alt{background:var(--gray)}
+        .section-title{text-align:center;margin-bottom:50px}
+        .section-title h2{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--navy);font-weight:800;margin-bottom:10px}
+        .section-title p{color:var(--muted);font-size:1.05rem;max-width:600px;margin:0 auto}
+        .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+        .service-card{background:var(--white);border-radius:12px;padding:30px;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:all .2s;border:1px solid #e2e8f0}
+        .service-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+        .service-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--teal),var(--teal-light));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px}
+        .service-card h3{font-size:1.15rem;color:var(--navy);margin-bottom:8px}
+        .service-card p{color:var(--muted);font-size:.92rem;margin-bottom:12px}
+        .service-price{color:var(--teal);font-weight:700;font-size:1rem}
+        .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+        .benefit{text-align:center}
+        .benefit-icon{width:64px;height:64px;background:linear-gradient(135deg,var(--teal),var(--teal-light));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin:0 auto 16px}
+        .benefit h3{color:var(--navy);margin-bottom:8px;font-size:1.05rem}
+        .benefit p{color:var(--muted);font-size:.9rem}
+        .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px}
+        .step{text-align:center;position:relative}
+        .step-num{width:48px;height:48px;background:var(--navy);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.2rem;margin:0 auto 16px}
+        .step h3{color:var(--navy);margin-bottom:8px}
+        .step p{color:var(--muted);font-size:.9rem}
+        .faq-list{max-width:750px;margin:0 auto}
+        .faq-item{border-bottom:1px solid #e2e8f0;padding:20px 0;cursor:pointer}
+        .faq-item h3{color:var(--navy);font-size:1.05rem;display:flex;justify-content:space-between;align-items:center}
+        .faq-item h3::after{content:'+';font-size:1.3rem;color:var(--teal);transition:transform .2s}
+        .faq-item.open h3::after{transform:rotate(45deg)}
+        .faq-item p{color:var(--muted);margin-top:12px;font-size:.95rem;display:none;line-height:1.7}
+        .faq-item.open p{display:block}
+        .cta-section{background:linear-gradient(135deg,var(--navy),var(--dark));color:var(--white);text-align:center;padding:80px 0}
+        .cta-section h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:14px}
+        .cta-section p{color:rgba(255,255,255,.7);margin-bottom:30px;font-size:1.05rem}
+        footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 0;text-align:center;font-size:.9rem}
+        footer a{color:var(--teal);text-decoration:none}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+        @media(max-width:768px){.about-grid{grid-template-columns:1fr}}
+        .about-text h3{color:var(--navy);margin-bottom:12px;font-size:1.3rem}
+        .about-text p{color:var(--muted);margin-bottom:14px}
+        .about-visual{background:linear-gradient(135deg,var(--teal),var(--teal-light));border-radius:16px;padding:40px;text-align:center;color:var(--white)}
+        .about-visual .big-icon{font-size:4rem;margin-bottom:16px}
+        .location-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+        .location-tag{background:rgba(0,180,216,.1);border:1px solid rgba(0,180,216,.2);color:var(--teal);padding:6px 14px;border-radius:20px;font-size:.85rem}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Mobile IV <span>Tech</span></a>
+            <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://mobileivtech.glossgenius.com" target="_blank" class="nav-cta">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Mobile IV Therapy<br>That Comes to <span>You</span></h1>
+            <p>Professional IV hydration and vitamin therapy delivered by a licensed nurse — at your home, office, or event in Lubbock, TX.</p>
+            <div class="hero-badges">
+                <span class="badge">Licensed Nurse</span>
+                <span class="badge">Same-Day Available</span>
+                <span class="badge">Lubbock, TX</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://mobileivtech.glossgenius.com" target="_blank" class="btn-primary">Book Your Session</a>
+                <a href="tel:+18065551234" class="btn-secondary">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our IV Therapy Services</h2>
+                <p>Each treatment is administered by a licensed nurse and customized to your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Hydration Therapy</h3>
+                    <p>Rapid fluid replacement to restore hydration, boost energy, and support recovery. Perfect after workouts, travel, or long days.</p>
+                    <span class="service-price">$99/session</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Immunity Boost</h3>
+                    <p>High-dose Vitamin C, Zinc, and antioxidants to strengthen your immune system and help prevent illness.</p>
+                    <span class="service-price">$99/session</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Energy & Performance</h3>
+                    <p>B-complex vitamins, amino acids, and electrolytes to fight fatigue and improve mental clarity.</p>
+                    <span class="service-price">$99/session</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤕</div>
+                    <h3>Hangover Recovery</h3>
+                    <p>Fast relief from nausea, headache, and dehydration with targeted vitamins and anti-nausea medication.</p>
+                    <span class="service-price">$99/session</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Myers' Cocktail</h3>
+                    <p>The gold standard — Magnesium, Calcium, B12, B-Complex, and Vitamin C for overall wellness and vitality.</p>
+                    <span class="service-price">$110/session</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧬</div>
+                    <h3>NAD+ Therapy</h3>
+                    <p>Advanced cellular repair and anti-aging therapy that supports brain function, energy, and longevity.</p>
+                    <span class="service-price">$110/session</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💪</div>
+                    <h3>Glutathione Push</h3>
+                    <p>The master antioxidant — supports detox, brightens skin, and fights oxidative stress at the cellular level.</p>
+                    <span class="service-price">$99/session</span>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:20px">
+                <p style="color:var(--muted);font-size:.95rem"><strong>Add-ons available:</strong> B-12 Shot (+$25) · Extra Vitamins (+$20) · Glutathione (+$30)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>About Mobile IV Tech</h3>
+                    <p>Founded by Nina Navarrette Richards, Mobile IV Tech brings professional IV therapy directly to you in Lubbock, TX. Our licensed nurse team delivers safe, comfortable treatments in the comfort of your home, office, or event.</p>
+                    <p>Whether you're recovering from a tough workout, fighting off a cold, or just need a wellness boost, we make it easy to feel your best — no clinic visit required.</p>
+                    <div class="location-tags">
+                        <span class="location-tag">Your Home</span>
+                        <span class="location-tag">Office</span>
+                        <span class="location-tag">Hotel</span>
+                        <span class="location-tag">Events</span>
+                        <span class="location-tag">Bachelor/Bachelorette</span>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="big-icon">💉</div>
+                    <h3>Professional Care<br>Delivered to You</h3>
+                    <p style="margin-top:12px;opacity:.9;font-size:.95rem">Licensed Nurse<br>30-75 Min Sessions<br>Lubbock, TX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What to Expect</h2>
+                <p>Your IV therapy session in 4 simple steps</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h3>Book Online</h3>
+                    <p>Choose your treatment and pick a time that works for you. Same-day appointments often available.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3>We Come to You</h3>
+                    <p>A licensed nurse arrives at your location with everything needed for your session.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3>Relax & Infuse</h3>
+                    <p>Your IV session takes 30-75 minutes. Sit back, relax, and let the vitamins do their work.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <h3>Feel the Difference</h3>
+                    <p>Most clients feel results within hours — more energy, better hydration, and improved well-being.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know before your first session</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <h3>How long does an IV therapy session take?</h3>
+                    <p>Most sessions take between 30 and 75 minutes depending on the treatment. Hydration and energy drips are typically faster (30-45 min), while treatments like NAD+ or Myers' Cocktail may take 60-75 minutes.</p>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <h3>Is IV therapy safe?</h3>
+                    <p>Yes. All treatments are administered by a licensed nurse using sterile, medical-grade equipment. We follow strict safety protocols and conduct a brief health screening before each session.</p>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <h3>How quickly will I feel results?</h3>
+                    <p>Most clients report feeling better within 1-2 hours of their session. Energy and hydration benefits are typically felt the same day, while immune support benefits build over the following days.</p>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <h3>What areas do you serve?</h3>
+                    <p>We serve Lubbock, TX and surrounding areas. We come to your home, office, hotel, Airbnb, or event venue. Contact us if you're unsure whether your location is in our service area.</p>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <h3>Do you offer group or event packages?</h3>
+                    <p>Yes! We provide IV therapy for events, bachelor/bachelorette parties, corporate wellness, and athletic events. Contact us for group pricing and availability.</p>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <h3>How do I book an appointment?</h3>
+                    <p>Book online through our scheduling page or call us directly. Same-day appointments are often available. We accept all major credit cards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Feel Your Best?</h2>
+            <p>Book your mobile IV therapy session in Lubbock, TX today</p>
+            <a href="https://mobileivtech.glossgenius.com" target="_blank" class="btn-primary">Book Your Session Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Mobile IV Tech &mdash; Lubbock, TX &bull; <a href="tel:+18065551234">(806) 555-1234</a></p>
+            <p style="margin-top:8px">&copy; 2026 Mobile IV Tech. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Mobile IV Tech",
+        "description": "Professional mobile IV therapy services in Lubbock, TX. Hydration, immunity, energy, and wellness treatments delivered to your door.",
+        "url": "https://mobileivtech.com",
+        "telephone": "+1-806-555-1234",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lubbock",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Lubbock, TX"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "IV Therapy Services",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hydration Therapy"}, "price": "99.00", "priceCurrency": "USD"},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Immunity Boost"}, "price": "99.00", "priceCurrency": "USD"},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Energy & Performance"}, "price": "99.00", "priceCurrency": "USD"},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hangover Recovery"}, "price": "99.00", "priceCurrency": "USD"},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Myers' Cocktail"}, "price": "110.00", "priceCurrency": "USD"},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "NAD+ Therapy"}, "price": "110.00", "priceCurrency": "USD"},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Glutathione Push"}, "price": "99.00", "priceCurrency": "USD"}
+            ]
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How long does an IV therapy session take?", "acceptedAnswer": {"@type": "Answer", "text": "Most sessions take between 30 and 75 minutes depending on the treatment."}},
+            {"@type": "Question", "name": "Is IV therapy safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All treatments are administered by a licensed nurse using sterile, medical-grade equipment."}},
+            {"@type": "Question", "name": "How quickly will I feel results?", "acceptedAnswer": {"@type": "Answer", "text": "Most clients report feeling better within 1-2 hours of their session."}},
+            {"@type": "Question", "name": "What areas do you serve?", "acceptedAnswer": {"@type": "Answer", "text": "We serve Lubbock, TX and surrounding areas including your home, office, hotel, or event venue."}},
+            {"@type": "Question", "name": "Do you offer group or event packages?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We provide IV therapy for events, bachelor/bachelorette parties, corporate wellness, and athletic events."}},
+            {"@type": "Question", "name": "How do I book an appointment?", "acceptedAnswer": {"@type": "Answer", "text": "Book online through our scheduling page or call us directly. Same-day appointments are often available."}}
+        ]
+    }
+    </script>
+</body>
+</html>
